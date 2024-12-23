@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(193, 15, 15, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"],
+input[type="text"],
+button {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.clips {
+    margin-top: 20px;
+}
+
+.clips video {
+    display: block;
+    margin: 10px 0;
+}

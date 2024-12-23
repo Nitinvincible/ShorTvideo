@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Video Transcription App</title>
+    <style>
+        .final-video {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #007bff;
+            background-color: #e9f7ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Short Video Creator</h1>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/upload">
+            <div class="form-group">
+                <label for="videoFile">Upload Video File</label>
+                <input type="file" name="videoFile" id="videoFile" class="form-control-file" required>
+                <small class="form-text text-muted">Please upload a video file.</small>
+            </div>
+            <div class="form-group">
+                <label for="keyword">Keyword</label>
+                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Enter the keyword related to subtitles" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" name="addSubtitles" id="addSubtitles" class="form-check-input">
+                <label class="form-check-label" for="addSubtitles">Add Subtitles to Final Video</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Upload</button>
+        </form>
+        <p class="info mt-3">Enter a keyword to extract clips based on the subtitles.</p>
+
+        {% if finalVideo %}
+            <div class="final-video">
+                <h3>Your final video is ready!</h3>
+                <a href="{{ url_for('sendClip', filename=finalVideo) }}" class="btn btn-primary" download>Download Final Video</a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
