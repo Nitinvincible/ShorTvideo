@@ -14,7 +14,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)  # Properly configured logger
 
 # Define the base directory for all file operations
-BASE_DIR = Path("C:/Users/Indevz1/Desktop/IndevzCode/ClipExtractionUsingSubtitle")
+BASE_DIR = Path("/home/indevznitin/indevzcodekali/ClipExtractionUsingSubtitle")
 CLIPS_DIR = BASE_DIR / "clips"
 
 # Ensure the clips directory exists
