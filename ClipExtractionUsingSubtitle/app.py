@@ -21,8 +21,7 @@ CLIPS_DIR = BASE_DIR / "clips"
 CLIPS_DIR.mkdir(parents=True, exist_ok=True)
 
 app = Flask(__name__)
-audioProcessor = AudioProcessor(apiKey="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", outputDir=CLIPS_DIR)
-
+audioProcessor = AudioProcessor(apiKey="api")
 @app.route('/')
 def index():
     return render_template('index.html')
